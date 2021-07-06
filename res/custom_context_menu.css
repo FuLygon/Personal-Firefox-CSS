@@ -1,0 +1,51 @@
+/* Hide Context Menu Item */
+#context-back image,
+#context-forward image,
+#context-reload image,
+#context-stop image,
+#context-bookmarkpage image,
+#context-navigation,
+#context-savepage,
+#context-viewinfo,
+#context-sep-navigation,
+#context-savelink,
+#context-sep-sendpagetodevice,
+#context-viewbgimage,
+#context-selectall,
+#context-sep-viewsource,
+#inspect-separator,
+#context-bookmarklink {
+	display: none !important;
+}
+
+/* Separator Color */
+#back-button>menupopup menuseparator,
+#backForwardMenu menuseparator,
+#contentAreaContextMenu menuseparator,
+#customizationPaletteItemContextMenu menuseparator,
+#customizationPanelItemContextMenu menuseparator,
+#customization-toolbar-menu menuseparator,
+#downloadsContextMenu menuseparator,
+#forward-button>menupopup menuseparator,
+#main-menubar menupopup menuseparator,
+#new-tab-button-popup menuseparator,
+#pageActionContextMenu menuseparator,
+#PlacesChevronPopup menuseparator,
+#placesContext menuseparator,
+#PlacesToolbarItems .bookmark-item menupopup menuseparator,
+.search-one-offs-context-menu menuseparator,
+#SyncedTabsSidebarContext menuseparator,
+#tabContextMenu menuseparator,
+#tabs-newtab-button-popup menuseparator,
+.textbox-contextmenu menuseparator,
+#toolbar-context-menu menuseparator,
+#toolbox-menu menuseparator,
+.urlbar-input-box .textbox-contextmenu menuseparator,
+#viewButton>menupopup menuseparator,
+#widget-overflow>#customizationPanelItemContextMenu menuseparator {
+	-moz-appearance: none !important;
+	margin: 3px 8px 3px 8px !important;
+	padding: 0 !important;
+	border-top: 1px solid rgba(190, 190, 190, 0.1) !important;
+	border-bottom: none !important;
+}

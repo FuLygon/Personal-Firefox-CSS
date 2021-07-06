@@ -1,4 +1,4 @@
-@import url(res/dark_context_menus.css);
+@import url(res/custom_context_menu.css);
 
 /* Hide top-left square */
 .titlebar-spacer[type="pre-tabs"] {
@@ -14,7 +14,6 @@
 .tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
   display: -moz-box !important;
 }
-
 
 .tabbrowser-tab:not([selected="true"]) .tab-label
 { 
