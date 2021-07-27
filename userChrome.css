@@ -1,4 +1,6 @@
 @import url(res/custom_context_menu.css);
+@import url(res/dynamic_bookmark_bar.css);
+@import url(res/tree_style_tab_flying.css);
 
 /* Hide top-left square */
 .titlebar-spacer[type="pre-tabs"] {
@@ -15,9 +17,8 @@
   display: -moz-box !important;
 }
 
-.tabbrowser-tab:not([selected="true"]) .tab-label
-{ 
-  color: gray !important; 
+.tabbrowser-tab:not([selected="true"]) .tab-label {
+  color: gray !important;
 }
 
 /* Centered URL */

@@ -1,0 +1,136 @@
+:root {
+    --sidebar-shadow-color: var(--tabpanel-background-color);
+    --sidebar-width: 250px;
+    --sidebar-collapsed-width: 60px;
+    --dividers: 0px;
+    --tl-animation-duration: 200ms;
+    --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --transition-time: 0.4s !important;
+    --ease-basic: linear;
+}
+
+:root[privatebrowsingmode="temporary"] {
+    --tabpanel-background-color: #2a2932 !important;
+}
+.tab-throbber::before {
+    fill: #fff !important;
+    opacity: 1 !important;
+}
+
+/* hide tab bar */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar>.toolbar-items {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+/* 15px for dragging whole window by mouse*/
+#titlebar {
+    appearance: none !important;
+    height: 15px;
+}
+
+/* fix for main menu calling by Alt button */
+#titlebar>#toolbar-menubar {
+    margin-top: 10px;
+}
+
+/* addd space for minimize/restore/close buttons */
+#nav-bar {
+    padding-right: 130px;
+}
+
+:root[privatebrowsingmode="temporary"] #nav-bar{
+    padding-right: 162px;
+}
+
+/* move minimize/restore/close buttons to empty space */
+#TabsToolbar>.titlebar-buttonbox-container {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 1px;
+}
+
+:root[tabsintitlebar][sizemode="normal"] #TabsToolbar>.titlebar-buttonbox-container {
+    top: 15px;
+}
+
+/* blend titlebar color with tabpanel */
+#titlebar {
+    background: var(--tabpanel-background-color);
+}
+
+:root[tabsintitlebar][sizemode="normal"] #titlebar {
+    max-height: 0px !important;
+}
+
+/* blend bookmark bar border color with tabpanel */
+#navigator-toolbox {
+    border-bottom: 1px var(--tabpanel-background-color) !important;
+}
+
+#PersonalToolbar {
+    background-color: var(--tabpanel-background-color);
+}
+
+:root[privatebrowsingmode="temporary"] .accessibility-indicator, .private-browsing-indicator {
+    margin-right: 140px !important;
+    margin-top: 13px !important;
+}
+
+:root[privatebrowsingmode="temporary"][sizemode="normal"] .accessibility-indicator, .private-browsing-indicator {
+    margin-top: 5px;
+}
+
+/* collapse by default */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+    z-index: 1000 !important;
+    position: relative !important;
+    min-width: var(--sidebar-collapsed-width) !important;
+    max-width: var(--sidebar-collapsed-width) !important;
+}
+
+/* inner width = expanded width & move inner to only show initial-width long section */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
+    position: absolute !important;
+    min-width: var(--sidebar-width) !important;
+    max-width: var(--sidebar-width) !important;
+    width: var(--sidebar-width) !important;
+    transform: translateX(calc(var(--sidebar-collapsed-width) - var(--sidebar-width)));
+    transition: all var(--transition-time) var(--ease-out);
+}
+
+/* move inner to show entire sidebar */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar:hover {
+    transform: translateX(0) !important;
+    box-shadow: 2px 0 33px -3px var(--sidebar-shadow-color);
+}
+
+#sidebar-box[sidebarcommand="viewBookmarksSidebar"] #sidebar {
+    transform: translateX(0) !important;
+    box-shadow: 2px 0 33px -3px var(--sidebar-shadow-color);
+}
+
+/* hide sidebar header for tree style tabs sidebar */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    display: none;
+}
+
+toolbar {
+    border: none !important;
+}
+
+/* hide splitter, when using Tree Style Tab. */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-splitter {
+    display: none !important;
+}
+
+.sidebar-splitter {
+    display: none !important;
+}
