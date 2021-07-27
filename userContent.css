@@ -25,3 +25,11 @@ url(about:newtab) {
         background-color: #202324;
     }
 }
+
+/* Suppress "white flash" on showing sidebar in Dark color mode */
+@-moz-document regexp("moz-extension://.+/sidebar/sidebar.html.*") {
+    :root,
+    #background {
+        background-color: #2a2932 !important;
+    }
+}
