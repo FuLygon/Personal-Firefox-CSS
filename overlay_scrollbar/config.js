@@ -10,7 +10,7 @@ try {
 		
 	Services.scriptloader.loadSubScript(
 	  OS.Path.toFileURI(OS.Path.join(OS.Constants.Path.profileDir,
-		"./chrome/res/userChromeJS.js")), this, "UTF-8");
+		"./chrome/overlay_scrollbar/userChromeJS.js")), this, "UTF-8");
 		
   };
 

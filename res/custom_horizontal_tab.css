@@ -1,0 +1,18 @@
+/* Hide top-left square */
+.titlebar-spacer[type="pre-tabs"] {
+	border-inline-end: 0px solid #fff !important;
+	width: 0px !important;
+  }
+  
+  /* Close button when hover over */
+  .tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+	display: none !important;
+  }
+  
+  .tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
+	display: -moz-box !important;
+  }
+  
+  .tabbrowser-tab:not([selected="true"]) .tab-label {
+	color: gray !important;
+  }

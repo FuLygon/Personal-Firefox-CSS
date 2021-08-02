@@ -14,6 +14,7 @@
 :root[privatebrowsingmode="temporary"] {
     --tabpanel-background-color: #2a2932 !important;
 }
+
 .tab-throbber::before {
     fill: #fff !important;
     opacity: 1 !important;
@@ -45,8 +46,9 @@
     padding-right: 130px;
 }
 
-:root[privatebrowsingmode="temporary"] #nav-bar{
-    padding-right: 162px;
+:root[privatebrowsingmode="temporary"] .accessibility-indicator,
+.private-browsing-indicator {
+    display: none !important;
 }
 
 /* move minimize/restore/close buttons to empty space */
@@ -79,12 +81,14 @@
     background-color: var(--tabpanel-background-color);
 }
 
-:root[privatebrowsingmode="temporary"] .accessibility-indicator, .private-browsing-indicator {
+:root[privatebrowsingmode="temporary"] .accessibility-indicator,
+.private-browsing-indicator {
     margin-right: 140px !important;
     margin-top: 13px !important;
 }
 
-:root[privatebrowsingmode="temporary"][sizemode="normal"] .accessibility-indicator, .private-browsing-indicator {
+:root[privatebrowsingmode="temporary"][sizemode="normal"] .accessibility-indicator,
+.private-browsing-indicator {
     margin-top: 5px;
 }
 

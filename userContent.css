@@ -1,3 +1,4 @@
+/* custom new tab background */
 @-moz-document url(about:home),
 url(about:newtab) {
 
@@ -22,11 +23,11 @@ url(about:newtab) {
 
 @-moz-document url-prefix(about:blank) {
     * {
-        background-color: #202324;
+        background-color: #2a2932;
     }
 }
 
-/* Suppress "white flash" on showing sidebar in Dark color mode */
+/* suppress "white flash" on showing sidebar in Dark color mode */
 @-moz-document regexp("moz-extension://.+/sidebar/sidebar.html.*") {
     :root,
     #background {

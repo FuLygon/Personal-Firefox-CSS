@@ -1,39 +1,27 @@
 :root {
-    --dark-0: #151D28;
-    --dark-base: #192330;
-    --dark-1: #233143;
-    --dark-2: #2A3B51;
-    --dark-3: #374E6C;
-    --dark-4: #3E5879;
-    --light-0: #D7DFEA;
-    --light-base: #afc0d5;
-    --light-1: #A1B5CE;
-    --light-2: #94ABC7;
-    --light-3: #87A0C0;
-    --light-4: #7996B9;
-    --accent: #63cdcf;
-    --yellow: #dbc074;
-    --green: #5cb8a7;
-    --red: #c94f6d;
-    --extension-icon-mask: grayscale(85%) invert(75%) sepia(8%) saturate(862%) hue-rotate(173deg) brightness(88%);
-}
-
-
-:root {
     --background: #2a2932;
     --active: #5a5a65;
     --hover: #43434d;
-    --tab-border-radius: 7px;
-    /* border radius of tabs */
-    --animation-duration: 200ms;
-    /* duration of different animations [0s: turn all animations off] */
-    --spacing: 8px;
-    /* spacing between tabs. [<15px: compact tabs] */
-    --distance-from-edge: 10px;
-    /* distance between tabs, and left-right edges of sidebar*/
-    --hover-text-spacing: 0.4;
-    /* should be left alone. with hover sidebar, if text is visible in collapsed status, increase this */
+    --mask: #c8c8c8;
+    --label: #fff;
 
+    /* loading icon color */
+    --throbber-color: var(--mask);
+
+    /* border radius of tabs */
+    --tab-border-radius: 7px;
+
+    /* duration of different animations [0s: turn all animations off] */
+    --animation-duration: 200ms;
+
+    /* spacing between tabs. [<15px: compact tabs] */
+    --spacing: 8px;
+
+    /* distance between tabs, and left-right edges of sidebar*/
+    --distance-from-edge: 10px;
+
+    /* should be left alone. with hover sidebar, if text is visible in collapsed status, increase this */
+    --hover-text-spacing: 0.4;
 
     --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -46,6 +34,14 @@
     --contextual-identity-color-green: #68D391;
     --contextual-identity-color-pink: #F687B3;
 }
+
+:root.incognito {
+    --active: #53338A;
+    --hover: #38225D;
+    --mask: #4A2D7B;
+    --label: #CC6B9C;
+}
+
 
 /************UNCUSTOMIZED CSS************/
 #tabbar-container #tabbar {
@@ -74,12 +70,6 @@ tab-item.collapsed {
     padding: 0 !important;
 }
 
-tab-item:not([data-level="0"]):not(.pinned) {
-    border-left: dashed 2px var(--light-4) !important;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-top: calc(var(--spacing)/2);
-}
 
 tab-item tab-favicon {
     left: 0;
@@ -91,16 +81,18 @@ tab-item tab-favicon {
 }
 
 tab-item .label {
-    color: var(--light-2) !important;
+    color: var(--label) !important;
+    opacity: 0.5;
     padding: 6px 0 9px;
 }
 
 tab-item .twisty:before {
-    background: var(--light-3) !important;
+    background: #fff !important;
 }
 
 tab-item.active .label {
-    color: var(--light-0) !important;
+    color: var(--label) !important;
+    opacity: 1;
 }
 
 tab-item.active {
@@ -130,20 +122,20 @@ tab-item:not(pinned) tab-closebox {
     border-radius: 50%;
     padding-top: 2px;
     padding-left: 2px;
-    background: var(--light-4);
+    background: var(--mask);
     transition: all var(--animation-duration) var(--ease-out);
 }
 
 .sound-button:after {
-    background: var(--light-3) !important;
+    background: var(--mask) !important;
     margin-right: 5px;
 }
 
 .counter {
-    color: var(--light-4) !important;
-    background: var(--dark-2) !important;
+    color: var(--label) !important;
+    background: var(--active) !important;
     border-radius: 7px;
-    margin: 2px 4px 0px 0px;
+    margin: 2px 4px 2px 0px;
     padding: 0 4px;
     padding-bottom: 2px;
     order: -1 !important;
@@ -209,14 +201,11 @@ tab-item:not(pinned) tab-closebox {
 }
 
 .newtab-button {
+    fill: white !important;
     border: none !important;
     border-radius: 8px;
     padding: 8px 0 !important;
     margin: 0 5px;
-}
-
-.newtab-button::before {
-    background: var(--light-3) !important;
 }
 
 .newtab-action-selector-anchor {
@@ -226,7 +215,18 @@ tab-item:not(pinned) tab-closebox {
 }
 
 .newtab-button:hover {
-    background: var(--dark-1) !important;
+    background: var(--hover) !important;
+}
+
+:root.simulate-svg-context-fill .newtab-button::after {
+    background-color: var(--mask);
+}
+
+:root.simulate-svg-context-fill .newtab-action-selector-anchor::after,
+:root.simulate-svg-context-fill .contextual-identities-selector-anchor::after,
+:root.simulate-svg-context-fill #subpanel-selector-anchor::after {
+    background: var(--mask);
+    margin: -4px;
 }
 
 /**********PINNED TAB***************/
@@ -245,6 +245,7 @@ tab-item.pinned {
     top: 0 !important;
     bottom: 0 !important;
 }
+
 
 tab-item.active .contextual-identity-marker {
     display: none !important;

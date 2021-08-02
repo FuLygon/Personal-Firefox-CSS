@@ -1,27 +1,16 @@
+/* personal horizontal tab style DEPRECATED*/
+/* @import url(res/custom_horizontal_tab.css); */
+
+/* personal context menu */
 @import url(res/custom_context_menu.css);
+
+/* expand bookmark bar upon hovering */
 @import url(res/dynamic_bookmark_bar.css);
-@import url(res/tree_style_tab_flying.css);
 
-/* Hide top-left square */
-.titlebar-spacer[type="pre-tabs"] {
-  border-inline-end: 0px solid white !important;
-  width: 0px !important;
-}
+/* custom firefox userChrome for vertical tab using Tree Style Tab */
+@import url(tree_style_tab/userChrome.css);
 
-/* Close button when hover over */
-.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
-  display: none !important;
-}
-
-.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
-  display: -moz-box !important;
-}
-
-.tabbrowser-tab:not([selected="true"]) .tab-label {
-  color: gray !important;
-}
-
-/* Centered URL */
+/* centered url */
 #urlbar-input {
   text-align: center !important;
 }
