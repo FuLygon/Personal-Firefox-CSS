@@ -38,8 +38,8 @@
 :root.incognito {
     --active: #53338A;
     --hover: #38225D;
-    --mask: #4A2D7B;
-    --label: #CC6B9C;
+    --mask: #CC6B9C;
+    --label: #fff;
 }
 
 

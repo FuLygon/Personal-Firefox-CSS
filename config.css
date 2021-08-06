@@ -1,0 +1,31 @@
+/* personal minimalized context menu */
+/* @import url(res/custom_context_menu.css); */
+
+/* expand bookmark bar upon hovering, if bookmark bar not expanding, enable bookmark bar first (toggle using Ctrl+Shift+B by default) */
+@import url(res/dynamic_bookmark_bar.css);
+
+:root { 
+    /* sidebar expanded width */
+    --sidebar-width: 250px;
+
+    /* sidebar collapsed width */
+    --sidebar-collapsed-width: 60px;
+
+    /* sidebar shadow color when expanded */
+    --sidebar-shadow-color: var(--toolbar-bgcolor);
+
+    /* animation */
+    --tl-animation-duration: 200ms;
+    --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --transition-time: 0.4s !important;
+    --ease-basic: linear;
+
+    /* adjust these values if windows control and titlebar look ugly & out of place */
+    /* windows control spacing */
+    --windows-control-top: 20px;
+    --windows-control-left: 130px;
+    /* titlebar height */
+    --titlebar-height: 15px;
+}

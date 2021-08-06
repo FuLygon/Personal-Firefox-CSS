@@ -1,13 +1,6 @@
 /* custom new tab background */
 @-moz-document url(about:home),
 url(about:newtab) {
-
-    .click-target-container *,
-    .top-sites-list * {
-        color: #ffffff !important;
-        text-shadow: 2px 2px 2px #222 !important;
-    }
-
     body::before {
         content: "";
         z-index: -1;

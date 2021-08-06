@@ -1,23 +1,6 @@
-:root {
-    --sidebar-shadow-color: var(--tabpanel-background-color);
-    --sidebar-width: 250px;
-    --sidebar-collapsed-width: 60px;
-    --dividers: 0px;
-    --tl-animation-duration: 200ms;
-    --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-    --transition-time: 0.4s !important;
-    --ease-basic: linear;
-}
-
-:root[privatebrowsingmode="temporary"] {
-    --tabpanel-background-color: #2a2932 !important;
-}
-
-.tab-throbber::before {
-    fill: #fff !important;
-    opacity: 1 !important;
+/* more spacing for bookmark bar */
+#PersonalToolbar {
+    margin: 0 0 4px 0;
 }
 
 /* hide tab bar */
@@ -30,10 +13,10 @@
     visibility: collapse !important;
 }
 
-/* 15px for dragging whole window by mouse*/
+/* leaving 15px for dragging whole window by mouse */
 #titlebar {
     appearance: none !important;
-    height: 15px;
+    height: var(--titlebar-height);
 }
 
 /* fix for main menu calling by Alt button */
@@ -41,31 +24,35 @@
     margin-top: 10px;
 }
 
-/* addd space for minimize/restore/close buttons */
-#nav-bar {
-    padding-right: 130px;
-}
-
 :root[privatebrowsingmode="temporary"] .accessibility-indicator,
 .private-browsing-indicator {
     display: none !important;
 }
 
+/* blend windows control background color with toolbar background color */
+#navigator-toolbox {
+	background-color: var(--toolbar-bgcolor) !important;
+}
+
 /* move minimize/restore/close buttons to empty space */
+toolbar#nav-bar {
+    margin-right: var(--windows-control-left) !important;
+}
+
 #TabsToolbar>.titlebar-buttonbox-container {
     display: block;
     position: absolute;
-    top: 20px;
+    top: var(--windows-control-top);
     right: 1px;
 }
 
 :root[tabsintitlebar][sizemode="normal"] #TabsToolbar>.titlebar-buttonbox-container {
-    top: 15px;
+    top: calc(var(--windows-control-top) - 5px);
 }
 
 /* blend titlebar color with tabpanel */
 #titlebar {
-    background: var(--tabpanel-background-color);
+    background: var(--toolbar-bgcolor);
 }
 
 :root[tabsintitlebar][sizemode="normal"] #titlebar {
@@ -74,22 +61,11 @@
 
 /* blend bookmark bar border color with tabpanel */
 #navigator-toolbox {
-    border-bottom: 1px var(--tabpanel-background-color) !important;
+    border-bottom: 1px var(--toolbar-bgcolor) !important;
 }
 
 #PersonalToolbar {
-    background-color: var(--tabpanel-background-color);
-}
-
-:root[privatebrowsingmode="temporary"] .accessibility-indicator,
-.private-browsing-indicator {
-    margin-right: 140px !important;
-    margin-top: 13px !important;
-}
-
-:root[privatebrowsingmode="temporary"][sizemode="normal"] .accessibility-indicator,
-.private-browsing-indicator {
-    margin-top: 5px;
+    background-color: var(--toolbar-bgcolor);
 }
 
 /* collapse by default */
@@ -121,7 +97,7 @@
     box-shadow: 2px 0 33px -3px var(--sidebar-shadow-color);
 }
 
-/* hide sidebar header for tree style tabs sidebar */
+/* hide sidebar header, when using Tree Style Tab */
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
     display: none;
 }

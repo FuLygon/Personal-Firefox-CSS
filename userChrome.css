@@ -1,11 +1,7 @@
+@import url(config.css);
+
 /* personal horizontal tab style DEPRECATED*/
 /* @import url(res/custom_horizontal_tab.css); */
-
-/* personal context menu */
-@import url(res/custom_context_menu.css);
-
-/* expand bookmark bar upon hovering */
-@import url(res/dynamic_bookmark_bar.css);
 
 /* custom firefox userChrome for vertical tab using Tree Style Tab */
 @import url(tree_style_tab/userChrome.css);

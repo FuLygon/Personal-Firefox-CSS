@@ -1,19 +1,7 @@
-:root {
-	--ease-in: cubic-bezier(0.32, 0, 0.67, 0);
-	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-	--transition-time: 0.4s !important;
-	--ease-basic: linear;
-}
-
 #PersonalToolbar {
 	margin: -40px 0 6px 0 !important;
 	opacity: 0;
 	transition: all var(--transition-time) var(--ease-out) !important;
-}
-
-#navigator-toolbox {
-	background-color: var(--tabpanel-background-color) !important;
 }
 
 toolbox[id="navigator-toolbox"]:hover #PersonalToolbar {
