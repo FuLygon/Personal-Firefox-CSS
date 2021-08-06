@@ -26,6 +26,8 @@
     /* windows control spacing */
     --windows-control-top: 20px;
     --windows-control-left: 130px;
+    /* adjust this if you have problem with windows control spacing when minimized */
+    --windows-control-top-minimized: 15px;
     /* titlebar height */
     --titlebar-height: 15px;
 }

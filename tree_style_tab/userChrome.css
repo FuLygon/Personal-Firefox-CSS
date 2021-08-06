@@ -47,7 +47,7 @@ toolbar#nav-bar {
 }
 
 :root[tabsintitlebar][sizemode="normal"] #TabsToolbar>.titlebar-buttonbox-container {
-    top: calc(var(--windows-control-top) - 5px);
+    top: var(--windows-control-top-minimized);
 }
 
 /* blend titlebar color with tabpanel */
