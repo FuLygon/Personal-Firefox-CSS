@@ -10,3 +10,9 @@
 #urlbar-input {
   text-align: center !important;
 }
+
+/* replace white flash when page loading with firefox dark color*/
+#tabbrowser-tabpanels,
+#main-window[windowtype="navigator:browser"] {
+  background-color: #2a2932 !important;
+}

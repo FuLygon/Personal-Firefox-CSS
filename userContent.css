@@ -7,16 +7,11 @@ url(about:newtab) {
         position: fixed;
         top: 0;
         left: 0;
+        background-color: #2a2932;
         background: transparent no-repeat url(res/bg.jpg) center;
         background-size: cover;
         width: 100vw;
         height: 100vh;
-    }
-}
-
-@-moz-document url-prefix(about:blank) {
-    * {
-        background-color: #2a2932;
     }
 }
 
